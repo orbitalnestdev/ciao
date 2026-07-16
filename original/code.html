@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Viajes de estudio a Italia · CIAO Idiomas</title>
+<meta content="Aprendé italiano donde se inventó. Inmersión cultural y académica en Bologna y Roma con CIAO Idiomas." name="description"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#006e13",
+                        "secondary": "#c7ef00",
+                        "tertiary": "#5f5696",
+                        "dark-violet": "#5f5696", 
+                        "on-surface": "#1a1c1e",
+                        "on-background": "#1a1c1e",
+                        "background": "#f9f9fc",
+                        "surface": "#eeeef0",
+                        "outline": "#6c7b67",
+                        "primary-container": "#27d339",
+                        "tertiary-container": "#b9aef6",
+                        "surface-container-low": "#f3f3f6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1.25rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "body": ["Poppins", "sans-serif"],
+                    },
+                    "animation": {
+                        "pulse-subtle": "pulse-subtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+                    },
+                    "keyframes": {
+                        "pulse-subtle": {
+                            "0%, 100%": { transform: "scale(1)", opacity: "1" },
+                            "50%": { transform: "scale(1.05)", opacity: "0.9" },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .active-tab {
+            background-color: white !important;
+            color: #5f5696 !important;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .cta-hover {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s ease;
+        }
+        .cta-hover:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+        .tab-panel {
+            transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+        }
+        .tab-panel.hidden {
+            display: none;
+            opacity: 0;
+            transform: scale(0.98);
+        }
+        .faq-item.open .faq-answer {
+            max-height: 500px;
+            padding-bottom: 1.5rem;
+        }
+        #hero-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body antialiased">
+<!-- Top Urgency Bar -->
+<div class="bg-on-background text-white text-center py-2 px-4 text-[11px] md:text-[12px] font-semibold tracking-wider uppercase z-[60] relative">
+    Septiembre 2026 — <span class="text-secondary">Quedan 4 cupos</span> <span class="mx-3 opacity-40">|</span> Cierre de inscripciones: 15 de julio
+</div>
+<!-- Navigation -->
+<header class="sticky top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-black/5">
+<nav class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="flex items-center">
+<img alt="CIAO Idiomas Logo" class="h-10 md:h-12" src="https://lh3.googleusercontent.com/aida/AP1WRLuKFwNf0ykORgxc04kRA_kDgHpv3Jv_QU6TA9nnI4W8c8Ikv4wFXbF9gnTpg9WEBPRaHuIdxtgexaYmF-ggXIzTCHB8RKyVeLFJbOrG8pOFDx0vzDlpOAwzuvqscdsRFjQfBrIBAdOD7AYy0473r4_pqaGYsNSIEtJqlPXZc9U7aFuRN7vgAFzgY08kdaeT_rX_AQ_xjqtV5MjXWuNTyAPK5eDBTy0br3dsgOxoRX0pnElRxCkA4RJU"/>
+</div>
+<div class="hidden md:flex space-x-8">
+<a class="text-[13px] font-semibold text-on-surface-variant hover:text-primary transition-colors" href="#paquetes">Paquetes</a>
+<a class="text-[13px] font-semibold text-on-surface-variant hover:text-primary transition-colors" href="#itinerario">Itinerario</a>
+<a class="text-[13px] font-semibold text-on-surface-variant hover:text-primary transition-colors" href="#testimonios">Testimonios</a>
+<a class="text-[13px] font-semibold text-on-surface-variant hover:text-primary transition-colors" href="#faq">Preguntas</a>
+</div>
+<a class="bg-dark-violet text-white px-6 py-2.5 rounded-full font-bold text-[13px] cta-hover" href="#contacto">
+            Reservar entrevista
+        </a>
+</nav>
+</header>
+<!-- Hero Section with Shader Background -->
+<section class="relative min-h-[85vh] flex items-center overflow-hidden bg-primary">
+<canvas id="hero-canvas"></canvas>
+<div class="absolute inset-0 z-[1] pointer-events-none">
+<img alt="Rome Italy" class="w-full h-full object-cover brightness-50 opacity-40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBD8zc9jPhba_8QNELDcxrzTJwLAvEIM-85q2lpg9a-qQQab2qBQ6u-iEsrBk9IxoKMiymSbOTeUFv-W8RBv17OQpu7z_x4uVSvJ-mIyw3E23dXtynqG2O6d8gG8SjKg6_DY4Vx6GTkwkErEs4fhwzqaF4IawBR0qYb480EK1zEX7U4o5nwAbmsva8WoLk3bbn80TrJZ3Y3JpTgrBsvdThrm9_XnFeDazbu_-LKhKSOBvAkzrQ9OLIOspbwvOyEecU6THGPZBXbhg"/>
+<div class="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent"></div>
+</div>
+<div class="max-w-7xl mx-auto px-6 relative z-10 w-full">
+<div class="max-w-3xl text-white reveal">
+<div class="inline-flex items-center gap-3 mb-6">
+<span class="w-12 h-[1px] bg-secondary"></span>
+<span class="text-secondary text-xs font-bold uppercase tracking-widest">Settembre 2026 · 18 días</span>
+</div>
+<h1 class="font-bold text-5xl md:text-7xl mb-6 leading-tight">Aprendé italiano <span class="italic text-secondary">donde se inventó.</span></h1>
+<p class="text-lg md:text-xl mb-10 opacity-90 max-w-lg">Dos semanas en Bologna estudiando en la Società Dante Alighieri. Una semana recorriendo Venecia, Florencia y Roma. Acompañados por la CEO de CIAO las 24 horas.</p>
+<div class="flex flex-wrap gap-4">
+<a class="bg-secondary text-on-surface px-8 py-4 rounded-full font-bold text-sm shadow-lg flex items-center gap-2 cta-hover" href="#contacto">
+                    Reservar mi entrevista <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+<a class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-full font-bold text-sm hover:bg-white/20 transition-all" href="#itinerario">
+                    Ver itinerario
+                </a>
+</div>
+<div class="mt-16 flex flex-wrap gap-8 items-center border-t border-white/10 pt-8">
+<div class="flex flex-col">
+<span class="text-xs uppercase tracking-tighter opacity-70">Aval académico</span>
+<span class="font-bold text-lg">Dante Alighieri</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xs uppercase tracking-tighter opacity-70">Certificación</span>
+<span class="font-bold text-lg">SEA</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xs uppercase tracking-tighter opacity-70">Vuelos</span>
+<span class="font-bold text-lg">ITA Airways</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Strip -->
+<section class="bg-on-background py-10 reveal">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+<div>
+<div class="text-secondary text-4xl md:text-5xl font-bold mb-1">18</div>
+<div class="text-white/60 text-[10px] uppercase font-bold tracking-widest">Días en Italia</div>
+</div>
+<div>
+<div class="text-secondary text-4xl md:text-5xl font-bold mb-1">4</div>
+<div class="text-white/60 text-[10px] uppercase font-bold tracking-widest">Ciudades</div>
+</div>
+<div>
+<div class="text-secondary text-4xl md:text-5xl font-bold mb-1">2 <span class="text-xl opacity-60">sem</span></div>
+<div class="text-white/60 text-[10px] uppercase font-bold tracking-widest">Curso intensivo</div>
+</div>
+<div>
+<div class="text-secondary text-4xl md:text-5xl font-bold mb-1">12 <span class="text-xl opacity-60">mes</span></div>
+<div class="text-white/60 text-[10px] uppercase font-bold tracking-widest">Estudio gratis en CIAO</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Differentiators Section -->
+<section class="py-24 bg-surface-container-low reveal">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+<div>
+<span class="text-dark-violet font-bold text-xs uppercase tracking-widest mb-4 block">No es un tour. Es una inmersión.</span>
+<h2 class="text-4xl md:text-5xl font-bold mb-8 leading-tight">Estudiás como un <span class="italic text-dark-violet">local italiano</span>, no como un turista.</h2>
+<p class="text-on-surface-variant text-lg mb-6 leading-relaxed">
+                La diferencia entre venir a Italia y vivir Italia se mide en lo que pasa fuera de la mochila: dónde dormís, con quién hablás, qué hacés a las 9 de la mañana de un martes cualquiera.
+            </p>
+<p class="text-on-surface-variant text-lg leading-relaxed">
+                Por eso este viaje no es para todos. Es para quien quiere aprender italiano practicándolo en una sobremesa real, no en un break entre selfies.
+            </p>
+</div>
+<div class="space-y-4">
+<div class="bg-white p-6 rounded-2xl flex gap-6 border border-black/5 hover:shadow-xl transition-all duration-300">
+<span class="text-4xl font-bold text-dark-violet/20 italic leading-none">01</span>
+<div>
+<h4 class="font-bold text-lg mb-2">4 horas de clase, todas las mañanas</h4>
+<p class="text-on-surface-variant text-sm">En la sede histórica de la Società Dante Alighieri en Bologna. Certificación oficial.</p>
+</div>
+</div>
+<div class="bg-white p-6 rounded-2xl flex gap-6 border border-black/5 hover:shadow-xl transition-all duration-300">
+<span class="text-4xl font-bold text-dark-violet/20 italic leading-none">02</span>
+<div>
+<h4 class="font-bold text-lg mb-2">Grupo reducido, acompañado por la CEO</h4>
+<p class="text-on-surface-variant text-sm">Verónica viaja con vos las 24hs. No estás solo en aeropuertos, hospedajes ni excursiones.</p>
+</div>
+</div>
+<div class="bg-white p-6 rounded-2xl flex gap-6 border border-black/5 hover:shadow-xl transition-all duration-300">
+<span class="text-4xl font-bold text-dark-violet/20 italic leading-none">03</span>
+<div>
+<h4 class="font-bold text-lg mb-2">Compañeros de clase de toda Europa</h4>
+<p class="text-on-surface-variant text-sm">Practicás italiano con estudiantes de Alemania, Francia, Polonia. El italiano se vuelve el idioma común.</p>
+</div>
+</div>
+<div class="bg-white p-6 rounded-2xl flex gap-6 border border-black/5 hover:shadow-xl transition-all duration-300">
+<span class="text-4xl font-bold text-dark-violet/20 italic leading-none">04</span>
+<div>
+<h4 class="font-bold text-lg mb-2">12 meses de estudio gratis en CIAO</h4>
+<p class="text-on-surface-variant text-sm">Empezás antes del viaje desde tu nivel. Llegás a Italia preparado, no recién aterrizado.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- How it Works -->
+<section class="py-24 bg-white reveal">
+<div class="max-w-7xl mx-auto px-6">
+<div class="mb-16">
+<span class="text-dark-violet font-bold text-xs uppercase tracking-widest mb-4 block">Cómo es el proceso</span>
+<h2 class="text-4xl font-bold">De la consulta al vuelo, en <span class="italic text-dark-violet">cuatro pasos.</span></h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="relative p-8 rounded-2xl bg-surface-container-lowest border border-outline-variant hover:border-dark-violet/30 transition-colors">
+<div class="text-dark-violet font-bold text-xs mb-4 uppercase tracking-tighter">Paso <span class="text-3xl block mt-1 italic opacity-20">01</span></div>
+<h3 class="font-bold text-xl mb-3">Charlamos</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Una llamada de 20 minutos para conocernos, contarte el detalle del viaje y resolver dudas. Sin compromiso.</p>
+</div>
+<div class="relative p-8 rounded-2xl bg-surface-container-lowest border border-outline-variant hover:border-dark-violet/30 transition-colors">
+<div class="text-dark-violet font-bold text-xs mb-4 uppercase tracking-tighter">Paso <span class="text-3xl block mt-1 italic opacity-20">02</span></div>
+<h3 class="font-bold text-xl mb-3">Reservás tu cupo</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Confirmás con el 50%. El saldo se completa en cuotas a tu medida, en pesos o USD, tarjeta o transferencia.</p>
+</div>
+<div class="relative p-8 rounded-2xl bg-surface-container-lowest border border-outline-variant hover:border-dark-violet/30 transition-colors">
+<div class="text-dark-violet font-bold text-xs mb-4 uppercase tracking-tighter">Paso <span class="text-3xl block mt-1 italic opacity-20">03</span></div>
+<h3 class="font-bold text-xl mb-3">Estudiás 12 meses gratis</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Acceso completo al campus de CIAO desde tu nivel. Llegás a Bologna ya hablando.</p>
+</div>
+<div class="relative p-8 rounded-2xl bg-surface-container-lowest border border-outline-variant hover:border-dark-violet/30 transition-colors">
+<div class="text-dark-violet font-bold text-xs mb-4 uppercase tracking-tighter">Paso <span class="text-3xl block mt-1 italic opacity-20">04</span></div>
+<h3 class="font-bold text-xl mb-3">Viajás</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">4 de septiembre 2026, salida desde Buenos Aires. Volvés el 21, con certificación oficial Dante Alighieri.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Packages Section -->
+<section class="py-24 bg-on-background text-white reveal" id="paquetes">
+<div class="max-w-7xl mx-auto px-6">
+<div class="mb-16 text-center">
+<span class="text-secondary font-bold text-xs uppercase tracking-widest mb-4 block">Elegí cómo querés viajar</span>
+<h2 class="text-4xl md:text-5xl font-bold">Dos paquetes, <span class="italic text-secondary">una misma experiencia.</span></h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+<!-- Paquete Medio -->
+<div class="bg-white text-on-surface p-10 rounded-3xl flex flex-col relative overflow-hidden transition-transform duration-300 hover:translate-y-[-8px]">
+<div class="mb-8">
+<span class="text-[11px] font-bold text-dark-violet uppercase tracking-widest block mb-2">Paquete Medio</span>
+<h3 class="text-3xl font-bold mb-4">Sin vuelo internacional</h3>
+<div class="py-6 border-y border-black/5">
+<span class="block text-xs font-bold text-on-surface-variant mb-1 uppercase">Desde:</span>
+<span class="text-5xl font-bold">USD 4.900</span>
+<p class="text-xs text-on-surface-variant mt-2">Reserva con 50%. Saldo en cuotas en pesos o USD.</p>
+</div>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-start gap-3 text-sm opacity-40 italic">
+<span class="material-symbols-outlined text-error text-lg">close</span>
+<span class="">Vuelo Buenos Aires → Bologna</span>
+</li>
+<li class="flex items-start gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+<span class="">Hospedaje + desayuno en Bologna y Roma</span>
+</li>
+<li class="flex items-start gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+<span class="">Curso intensivo Dante Alighieri (2 sem)</span>
+</li>
+<li class="flex items-start gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+<span class="">12 meses de estudio gratis en CIAO</span>
+</li>
+<li class="flex items-start gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+<span class="">Excursiones a Venecia, Florencia, Roma</span>
+</li>
+<li class="flex items-start gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+<span class="">Acompañamiento 24hs por la CEO</span>
+</li>
+<li class="flex items-start gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+<span class="">Asistencia al viajero + kit de viaje</span>
+</li>
+</ul>
+<a class="w-full py-4 bg-on-background text-white rounded-full font-bold text-center cta-hover" href="#contacto">Quiero este paquete</a>
+</div>
+<!-- Paquete Full (Featured) -->
+<div class="bg-white text-on-surface p-10 rounded-3xl flex flex-col relative overflow-hidden border-4 border-secondary transition-transform duration-300 hover:translate-y-[-8px] shadow-2xl shadow-secondary/10">
+<div class="absolute top-0 right-0 bg-secondary px-4 py-1.5 font-bold text-[10px] uppercase tracking-widest text-on-surface rounded-bl-xl">Más elegido</div>
+<div class="mb-8">
+<span class="text-[11px] font-bold text-dark-violet uppercase tracking-widest block mb-2">Paquete Full</span>
+<h3 class="text-3xl font-bold mb-4">Todo <span class="italic text-dark-violet">incluido</span></h3>
+<div class="py-6 border-y border-black/5">
+<span class="block text-xs font-bold text-on-surface-variant mb-1 uppercase">Desde:</span>
+<span class="text-5xl font-bold">USD 6.550</span>
+<p class="text-xs text-on-surface-variant mt-2">Reserva con 50%. Saldo en cuotas en pesos o USD.</p>
+</div>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-start gap-3 text-sm font-bold">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+<span class="">Vuelo Buenos Aires → Bologna (ITA Airways)</span>
+</li>
+<li class="flex items-start gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+<span class="">Hospedaje + desayuno en Bologna y Roma</span>
+</li>
+<li class="flex items-start gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+<span class="">Curso intensivo Dante Alighieri (2 sem)</span>
+</li>
+<li class="flex items-start gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+<span class="">12 meses de estudio gratis en CIAO</span>
+</li>
+<li class="flex items-start gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+<span class="">Excursiones a Venecia, Florencia, Roma</span>
+</li>
+<li class="flex items-start gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+<span class="">Acompañamiento 24hs por la CEO</span>
+</li>
+<li class="flex items-start gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+<span class="">Asistencia al viajero + kit de viaje</span>
+</li>
+</ul>
+<a class="w-full py-4 bg-dark-violet text-white rounded-full font-bold text-center cta-hover" href="#contacto">Quiero este paquete</a>
+</div>
+</div>
+<!-- Payment Methods -->
+<div class="mt-20 flex flex-col md:flex-row items-center justify-center gap-10 border-t border-white/10 pt-16">
+<h4 class="text-lg font-bold">Medios de pago:</h4>
+<div class="flex flex-wrap justify-center gap-6">
+<div class="bg-white/5 border border-white/10 px-6 py-4 rounded-2xl flex items-center gap-3 hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-secondary">credit_card</span>
+<span class="font-bold text-sm">Tarjeta</span>
+</div>
+<div class="bg-white/5 border border-white/10 px-6 py-4 rounded-2xl flex items-center gap-3 hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-secondary">account_balance</span>
+<span class="font-bold text-sm">Transferencia</span>
+</div>
+<div class="bg-white/5 border border-white/10 px-6 py-4 rounded-2xl flex items-center gap-3 hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-secondary">payments</span>
+<span class="font-bold text-sm">Efectivo</span>
+</div>
+</div>
+<p class="text-xs text-white/50 text-center max-w-xs">
+                Reserva 50% · Cuotas a tu medida · Todo el saldo abonado antes de partir.
+            </p>
+</div>
+</div>
+</section>
+<!-- Itinerary Section -->
+<section class="py-24 bg-dark-violet text-white reveal" id="itinerario">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<span class="text-secondary font-bold text-xs uppercase tracking-widest mb-4 block">El itinerario</span>
+<h2 class="text-4xl md:text-5xl font-bold mb-6">18 días, divididos en <span class="italic text-secondary">tres tiempos.</span></h2>
+<p class="max-w-2xl mx-auto opacity-80">Dos semanas de estudio inmersivo en Bologna, excursiones culturales los fines de semana y los últimos tres días en Roma para cerrar la experiencia.</p>
+</div>
+<!-- Tab Controls -->
+<div class="flex flex-wrap justify-center gap-4 mb-16">
+<button class="active-tab px-10 py-3 rounded-full font-bold text-sm bg-white/10 text-white transition-all border border-white/20" onclick="switchTab('bologna', this)">
+<span class="italic text-xs mr-2 opacity-60 font-medium">1.</span> Bologna · estudio
+            </button>
+<button class="px-10 py-3 rounded-full font-bold text-sm bg-white/10 text-white hover:bg-white/20 transition-all border border-white/20" onclick="switchTab('excursiones', this)">
+<span class="italic text-xs mr-2 opacity-60 font-medium">2.</span> Excursiones culturales
+            </button>
+<button class="px-10 py-3 rounded-full font-bold text-sm bg-white/10 text-white hover:bg-white/20 transition-all border border-white/20" onclick="switchTab('roma', this)">
+<span class="italic text-xs mr-2 opacity-60 font-medium">3.</span> Roma · cierre
+            </button>
+</div>
+<!-- Panels Container -->
+<div id="tab-panels">
+<!-- Bologna Panel -->
+<div class="tab-panel grid grid-cols-1 md:grid-cols-2 gap-12 items-start" id="panel-bologna">
+<div class="space-y-8">
+<div class="mb-4">
+<h3 class="text-3xl font-bold mb-2">Bologna, <span class="italic text-secondary">la dotta</span></h3>
+<span class="text-[10px] uppercase font-bold tracking-widest text-secondary/80">Días 1 al 14 · Habitación individual</span>
+</div>
+<div class="space-y-6">
+<div class="flex gap-6 p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+<div class="text-secondary font-bold shrink-0">
+<span class="text-[10px] uppercase block mb-1">Giorno</span>
+<span class="text-2xl italic leading-none">01-02</span>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-1">Llegada e instalación</h4>
+<p class="text-sm opacity-70">Recepción en el aeropuerto. Test de nivelación oficial. Almuerzo de bienvenida con el grupo.</p>
+</div>
+</div>
+<div class="flex gap-6 p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+<div class="text-secondary font-bold shrink-0">
+<span class="text-[10px] uppercase block mb-1">Giorno</span>
+<span class="text-2xl italic leading-none">03-12</span>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-1">Clases y profundización</h4>
+<p class="text-sm opacity-70">Curso intensivo en la sede de la Dante Alighieri. 4 horas diarias por la mañana. Actividades de integración por las tardes.</p>
+</div>
+</div>
+<div class="flex gap-6 p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+<div class="text-secondary font-bold shrink-0">
+<span class="text-[10px] uppercase block mb-1">Giorno</span>
+<span class="text-2xl italic leading-none">13-14</span>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-1">Examen y certificación</h4>
+<p class="text-sm opacity-70">Entrega de certificado oficial por días asistidos. Cena de despedida en una trattoria boloñesa.</p>
+</div>
+</div>
+</div>
+<button class="bg-white text-dark-violet px-10 py-3 rounded-full font-bold text-sm transition-all shadow-xl cta-hover">Descargar Itinerario Completo</button>
+</div>
+<div class="rounded-3xl overflow-hidden shadow-2xl h-[500px]">
+<img alt="Bologna Experience" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLvQSdY3iRqHhXpmHBNfj2RWWczzxOJO8r4RM7m-GHbCmRRSPzHKE9zHDS3Un6iMl3SdeVve8R162eoxsE0rzpqU_GVmwR-k9gN-Hwjva0sIeaEqiB1twipVpeFzXho_kJW4_Ugc-o10BiMDP6p0mBjF8FlY5LJEAXpoe5sdyZ8rhYXWYJP96IXYCknDPDFrEPxzANyxNJjBgkt47pRTy46NBbh-md7Lb6eoW9ObnCkrNX6HNKRj4k4kZg"/>
+</div>
+</div>
+<!-- Excursiones Panel -->
+<div class="tab-panel hidden grid grid-cols-1 md:grid-cols-2 gap-12 items-start" id="panel-excursiones">
+<div class="space-y-8">
+<div class="mb-4">
+<h3 class="text-3xl font-bold mb-2">Tres ciudades, <span class="italic text-secondary">tres mundos</span></h3>
+<span class="text-[10px] uppercase font-bold tracking-widest text-secondary/80">Fines de semana · Excursiones organizadas</span>
+</div>
+<div class="space-y-6">
+<div class="flex gap-6 p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+<div class="text-secondary font-bold shrink-0">
+<span class="text-[10px] uppercase block mb-1">Sabato</span>
+<span class="text-2xl italic leading-none">Venecia</span>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-1">El laberinto sobre el agua</h4>
+<p class="text-sm opacity-70">Plaza San Marcos, Puente de Rialto, barrio Cannaregio. Almuerzo en una osteria local.</p>
+</div>
+</div>
+<div class="flex gap-6 p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+<div class="text-secondary font-bold shrink-0">
+<span class="text-[10px] uppercase block mb-1">Domenica</span>
+<span class="text-2xl italic leading-none">Firenze</span>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-1">Cuna del Renacimiento</h4>
+<p class="text-sm opacity-70">Galería Uffizi, Ponte Vecchio, Duomo. Tarde libre en el barrio Oltrarno.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="rounded-3xl overflow-hidden shadow-2xl h-[500px]">
+<img alt="Excursiones" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQNO_m_Kpr1iwXhYTMvKWxNic_o0I3bDeTW960b-c4n-Zd6vifdZvtuAOM_aJv9uRA72DlQydptmwaz_xCH99P8qvZpgw7BVvdjlOH8ZdBK-_k0vAiSErProLG0ZShEr9tHECwRVFz3p73KQJY6z_x2SrdknTGoOruC5duw9kN87DhOZHPNg-SUU6Nt_8cRzsBHx19_yplt-G0AQZKDGLQm-E43280e-B3O7ySAyjUN4p3TNSqofTn_UAmakyezgnGWcb6m30nWg"/>
+</div>
+</div>
+<!-- Roma Panel -->
+<div class="tab-panel hidden grid grid-cols-1 md:grid-cols-2 gap-12 items-start" id="panel-roma">
+<div class="space-y-8">
+<div class="mb-4">
+<h3 class="text-3xl font-bold mb-2">Roma, <span class="italic text-secondary">caput mundi</span></h3>
+<span class="text-[10px] uppercase font-bold tracking-widest text-secondary/80">Días 15 al 18 · Habitación doble</span>
+</div>
+<div class="space-y-6">
+<div class="flex gap-6 p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+<div class="text-secondary font-bold shrink-0">
+<span class="text-[10px] uppercase block mb-1">Giorno</span>
+<span class="text-2xl italic leading-none">15-16</span>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-1">Traslado y Roma antigua</h4>
+<p class="text-sm opacity-70">Tren de alta velocidad. Check-in. Coliseo, Foro Romano y paseo por Trastevere.</p>
+</div>
+</div>
+<div class="flex gap-6 p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+<div class="text-secondary font-bold shrink-0">
+<span class="text-[10px] uppercase block mb-1">Giorno</span>
+<span class="text-2xl italic leading-none">17-18</span>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-1">Vaticano y Regreso</h4>
+<p class="text-sm opacity-70">Basílica de San Pedro, Museos Vaticanos. Traslado a Fiumicino y vuelo a Argentina.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="rounded-3xl overflow-hidden shadow-2xl h-[500px]">
+<img alt="Roma Experience" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBD8zc9jPhba_8QNELDcxrzTJwLAvEIM-85q2lpg9a-qQQab2qBQ6u-iEsrBk9IxoKMiymSbOTeUFv-W8RBv17OQpu7z_x4uVSvJ-mIyw3E23dXtynqG2O6d8gG8SjKg6_DY4Vx6GTkwkErEs4fhwzqaF4IawBR0qYb480EK1zEX7U4o5nwAbmsva8WoLk3bbn80TrJZ3Y3JpTgrBsvdThrm9_XnFeDazbu_-LKhKSOBvAkzrQ9OLIOspbwvOyEecU6THGPZBXbhg"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Authority Section -->
+<section class="py-24 bg-primary text-white overflow-hidden relative reveal">
+<div class="absolute -right-20 top-20 opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-[300px]">school</span>
+</div>
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+<div>
+<span class="text-secondary font-bold text-xs uppercase tracking-widest mb-4 block">El aval académico</span>
+<h2 class="text-4xl md:text-5xl font-bold mb-8 leading-tight">Estudiás en la <span class="italic text-secondary">Società Dante Alighieri</span></h2>
+<p class="text-white/90 text-lg mb-6 leading-relaxed">
+                La institución que difunde el italiano desde 1889. Su sede de Bologna es donde vas a cursar las dos semanas de inmersión.
+            </p>
+<p class="text-white/90 text-lg mb-10 leading-relaxed">
+                Recibís certificación oficial por los días asistidos, válida internacionalmente como aval académico.
+            </p>
+<div class="flex flex-wrap gap-12">
+<div class="flex flex-col">
+<span class="text-secondary font-bold text-3xl mb-1">1889</span>
+<span class="text-xs uppercase tracking-widest opacity-70 font-semibold">Fundación</span>
+</div>
+<div class="flex flex-col">
+<span class="text-secondary font-bold text-3xl mb-1">+400</span>
+<span class="text-xs uppercase tracking-widest opacity-70 font-semibold">Sedes mundiales</span>
+</div>
+<div class="flex flex-col">
+<span class="text-secondary font-bold text-3xl mb-1">SEA</span>
+<span class="text-xs uppercase tracking-widest opacity-70 font-semibold">Aval en Arg</span>
+</div>
+</div>
+</div>
+<div class="bg-white text-on-surface p-10 rounded-3xl shadow-2xl relative">
+<div class="h-64 rounded-2xl overflow-hidden mb-8">
+<img alt="Verónica Spagnuolo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLvQSdY3iRqHhXpmHBNfj2RWWczzxOJO8r4RM7m-GHbCmRRSPzHKE9zHDS3Un6iMl3SdeVve8R162eoxsE0rzpqU_GVmwR-k9gN-Hwjva0sIeaEqiB1twipVpeFzXho_kJW4_Ugc-o10BiMDP6p0mBjF8FlY5LJEAXpoe5sdyZ8rhYXWYJP96IXYCknDPDFrEPxzANyxNJjBgkt47pRTy46NBbh-md7Lb6eoW9ObnCkrNX6HNKRj4k4kZg"/>
+</div>
+<div class="mb-4">
+<h4 class="text-2xl font-bold">Verónica Spagnuolo</h4>
+<span class="text-dark-violet text-xs font-bold uppercase tracking-widest">CEO de CIAO · Tu guía en Italia</span>
+</div>
+<p class="text-lg italic text-on-surface-variant font-medium leading-relaxed">
+                "No es un viaje organizado: es un viaje compartido. Estoy con vos las 24 horas, desde el momento que aterrizamos hasta que volvemos."
+            </p>
+</div>
+</div>
+</section>
+<!-- Gallery Section -->
+<section class="py-24 bg-surface reveal">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<span class="text-dark-violet font-bold text-xs uppercase tracking-widest mb-4 block">Capturas del viaje</span>
+<h2 class="text-4xl font-bold">Así se vive la <span class="italic text-dark-violet">experiencia CIAO.</span></h2>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<img alt="Bologna Street" class="w-full h-64 object-cover rounded-2xl hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLvQSdY3iRqHhXpmHBNfj2RWWczzxOJO8r4RM7m-GHbCmRRSPzHKE9zHDS3Un6iMl3SdeVve8R162eoxsE0rzpqU_GVmwR-k9gN-Hwjva0sIeaEqiB1twipVpeFzXho_kJW4_Ugc-o10BiMDP6p0mBjF8FlY5LJEAXpoe5sdyZ8rhYXWYJP96IXYCknDPDFrEPxzANyxNJjBgkt47pRTy46NBbh-md7Lb6eoW9ObnCkrNX6HNKRj4k4kZg"/>
+<img alt="Firenze View" class="w-full h-64 object-cover rounded-2xl hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQNO_m_Kpr1iwXhYTMvKWxNic_o0I3bDeTW960b-c4n-Zd6vifdZvtuAOM_aJv9uRA72DlQydptmwaz_xCH99P8qvZpgw7BVvdjlOH8ZdBK-_k0vAiSErProLG0ZShEr9tHECwRVFz3p73KQJY6z_x2SrdknTGoOruC5duw9kN87DhOZHPNg-SUU6Nt_8cRzsBHx19_yplt-G0AQZKDGLQm-E43280e-B3O7ySAyjUN4p3TNSqofTn_UAmakyezgnGWcb6m30nWg"/>
+<img alt="Rome Colosseum" class="w-full h-64 object-cover rounded-2xl hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBD8zc9jPhba_8QNELDcxrzTJwLAvEIM-85q2lpg9a-qQQab2qBQ6u-iEsrBk9IxoKMiymSbOTeUFv-W8RBv17OQpu7z_x4uVSvJ-mIyw3E23dXtynqG2O6d8gG8SjKg6_DY4Vx6GTkwkErEs4fhwzqaF4IawBR0qYb480EK1zEX7U4o5nwAbmsva8WoLk3bbn80TrJZ3Y3JpTgrBsvdThrm9_XnFeDazbu_-LKhKSOBvAkzrQ9OLIOspbwvOyEecU6THGPZBXbhg"/>
+<img alt="Italian Food" class="w-full h-64 object-cover rounded-2xl hover:scale-105 transition-transform duration-500" onerror="this.src='https://lh3.googleusercontent.com/aida/AP1WRLvQSdY3iRqHhXpmHBNfj2RWWczzxOJO8r4RM7m-GHbCmRRSPzHKE9zHDS3Un6iMl3SdeVve8R162eoxsE0rzpqU_GVmwR-k9gN-Hwjva0sIeaEqiB1twipVpeFzXho_kJW4_Ugc-o10BiMDP6p0mBjF8FlY5LJEAXpoe5sdyZ8rhYXWYJP96IXYCknDPDFrEPxzANyxNJjBgkt47pRTy46NBbh-md7Lb6eoW9ObnCkrNX6HNKRj4k4kZg'" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYfP26I60yN-0m0KjYVjD70-xT8uXn-xL6L7-u9R3W5P8k7TfS8G0Y0L3-n-xL8u7P8k7TfS8G0Y0L3-n-xL8u7P8k7TfS8G0Y0L3"/>
+</div>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section class="py-24 bg-secondary reveal" id="testimonios">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<span class="text-dark-violet font-bold text-xs uppercase tracking-widest mb-4 block">Lo que cuentan los que ya viajaron</span>
+<h2 class="text-4xl font-bold text-dark-violet">No son reseñas. Son <span class="italic">experiencias vividas.</span></h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Testimonio 1 -->
+<div class="bg-white p-10 rounded-3xl shadow-lg border border-black/5 flex flex-col hover:shadow-xl transition-shadow duration-300">
+<div class="flex text-secondary-container mb-6">
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+</div>
+<p class="text-on-surface-variant italic mb-8 flex-grow">"Viajar con la CEO hizo toda la diferencia. Nos acompañó en cada recorrido, organizó todo al detalle y siempre estuvo disponible. Me sentí súper contenida y pude disfrutar Italia aprendiendo muchísimo."</p>
+<div>
+<h4 class="font-bold text-lg">Sofía Pereyra</h4>
+<p class="text-xs text-dark-violet font-semibold uppercase tracking-wider">Buenos Aires · Viajó en 2024</p>
+</div>
+</div>
+<!-- Testimonio 2 -->
+<div class="bg-white p-10 rounded-3xl shadow-lg border border-black/5 flex flex-col hover:shadow-xl transition-shadow duration-300">
+<div class="flex text-secondary-container mb-6">
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+</div>
+<p class="text-on-surface-variant italic mb-8 flex-grow">"Las clases en la Dante fueron muy prácticas y me ayudaron a desenvolverme mejor en cada ciudad. Conocí personas increíbles que hicieron la experiencia aún más enriquecedora."</p>
+<div>
+<h4 class="font-bold text-lg">Martín Acosta</h4>
+<p class="text-xs text-dark-violet font-semibold uppercase tracking-wider">Rosario · Viajó en 2024</p>
+</div>
+</div>
+<!-- Testimonio 3 -->
+<div class="bg-white p-10 rounded-3xl shadow-lg border border-black/5 flex flex-col hover:shadow-xl transition-shadow duration-300">
+<div class="flex text-secondary-container mb-6">
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+</div>
+<p class="text-on-surface-variant italic mb-8 flex-grow">"Una experiencia soñada. Me encantó cómo se combinaron las visitas culturales con las clases. Tener una guía que conocía perfectamente cada ciudad hizo que todo fluyera con naturalidad."</p>
+<div>
+<h4 class="font-bold text-lg">Valentina Romero</h4>
+<p class="text-xs text-dark-violet font-semibold uppercase tracking-wider">Córdoba · Viajó en 2023</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-24 bg-white reveal" id="faq">
+<div class="max-w-4xl mx-auto px-6">
+<div class="text-center mb-16">
+<span class="text-dark-violet font-bold text-xs uppercase tracking-widest mb-4 block">Preguntas frecuentes</span>
+<h2 class="text-4xl font-bold">Despejá tus <span class="italic text-dark-violet">dudas.</span></h2>
+</div>
+<div class="space-y-4">
+<div class="faq-item border border-black/5 rounded-2xl overflow-hidden bg-surface-container-lowest">
+<button class="w-full p-6 text-left flex justify-between items-center font-bold text-lg" onclick="toggleFaq(this)">
+                    ¿Necesito saber italiano para viajar?
+                    <span class="material-symbols-outlined transition-transform">expand_more</span>
+</button>
+<div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 px-6">
+<p class="text-on-surface-variant text-sm">No es excluyente. El viaje incluye 12 meses de estudio gratis en CIAO antes de partir para que llegues con una base sólida. Además, allá se te nivelará en la Dante Alighieri según tu conocimiento previo.</p>
+</div>
+</div>
+<div class="faq-item border border-black/5 rounded-2xl overflow-hidden bg-surface-container-lowest">
+<button class="w-full p-6 text-left flex justify-between items-center font-bold text-lg" onclick="toggleFaq(this)">
+                    ¿Cómo son los grupos?
+                    <span class="material-symbols-outlined transition-transform">expand_more</span>
+</button>
+<div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 px-6">
+<p class="text-on-surface-variant text-sm">Son grupos reducidos de máximo 15 personas para garantizar una experiencia personalizada y que Verónica pueda acompañar a cada uno de cerca.</p>
+</div>
+</div>
+<div class="faq-item border border-black/5 rounded-2xl overflow-hidden bg-surface-container-lowest">
+<button class="w-full p-6 text-left flex justify-between items-center font-bold text-lg" onclick="toggleFaq(this)">
+                    ¿Puedo pagar en cuotas?
+                    <span class="material-symbols-outlined transition-transform">expand_more</span>
+</button>
+<div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 px-6">
+<p class="text-on-surface-variant text-sm">Sí, reservás con el 50% y el saldo se puede abonar en cuotas fijas a convenir, siempre que el viaje esté saldado antes de la fecha de salida.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Form Section -->
+<section class="py-24 bg-dark-violet text-white reveal" id="contacto">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+<div>
+<h2 class="text-4xl md:text-5xl font-bold mb-6">Empezá tu viaje <span class="italic text-secondary">hoy mismo.</span></h2>
+<p class="text-lg opacity-80 mb-10">Dejanos tus datos para coordinar una entrevista de 20 minutos con Verónica. Queremos conocerte y contarte todos los detalles del viaje de estudio 2026.</p>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">mail</span>
+</div>
+<div>
+<p class="text-xs uppercase font-bold opacity-60">Escribinos</p>
+<p class="font-bold">hola@ciaoidiomas.com</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">location_on</span>
+</div>
+<div>
+<p class="text-xs uppercase font-bold opacity-60">Ubicación</p>
+<p class="font-bold">Rosario, Santa Fe, Argentina</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white p-10 rounded-3xl text-on-surface shadow-2xl">
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase opacity-60">Nombre completo</label>
+<input class="w-full bg-surface border-none rounded-xl p-4 text-sm focus:ring-2 focus:ring-primary transition-all" placeholder="Tu nombre" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase opacity-60">Teléfono (WhatsApp)</label>
+<input class="w-full bg-surface border-none rounded-xl p-4 text-sm focus:ring-2 focus:ring-primary transition-all" placeholder="+54 9..." type="tel"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase opacity-60">Email</label>
+<input class="w-full bg-surface border-none rounded-xl p-4 text-sm focus:ring-2 focus:ring-primary transition-all" placeholder="ejemplo@correo.com" type="email"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase opacity-60">Mensaje (opcional)</label>
+<textarea class="w-full bg-surface border-none rounded-xl p-4 text-sm focus:ring-2 focus:ring-primary transition-all" placeholder="Contanos tus dudas..." rows="4"></textarea>
+</div>
+<button class="w-full py-4 bg-primary text-white rounded-full font-bold cta-hover shadow-lg" type="submit">Enviar solicitud de entrevista</button>
+<p class="text-[10px] text-center opacity-40 uppercase font-bold tracking-widest mt-4">Nos contactamos en menos de 24 horas hábiles</p>
+</form>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-on-background text-white py-12">
+<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+<img alt="CIAO Idiomas Logo" class="h-10 opacity-50 grayscale brightness-200" src="https://lh3.googleusercontent.com/aida/AP1WRLuKFwNf0ykORgxc04kRA_kDgHpv3Jv_QU6TA9nnI4W8c8Ikv4wFXbF9gnTpg9WEBPRaHuIdxtgexaYmF-ggXIzTCHB8RKyVeLFJbOrG8pOFDx0vzDlpOAwzuvqscdsRFjQfBrIBAdOD7AYy0473r4_pqaGYsNSIEtJqlPXZc9U7aFuRN7vgAFzgY08kdaeT_rX_AQ_xjqtV5MjXWuNTyAPK5eDBTy0br3dsgOxoRX0pnElRxCkA4RJU"/>
+<div class="flex gap-8">
+<a class="text-xs font-bold uppercase opacity-60 hover:opacity-100 transition-opacity" href="#">Legales</a>
+<a class="text-xs font-bold uppercase opacity-60 hover:opacity-100 transition-opacity" href="#">Privacidad</a>
+<a class="text-xs font-bold uppercase opacity-60 hover:opacity-100 transition-opacity" href="#">Cookies</a>
+</div>
+<p class="text-[10px] font-bold uppercase opacity-40">© 2024 CIAO Idiomas. Todos los derechos reservados.</p>
+</div>
+</footer>
+<!-- WhatsApp Floating Button -->
+<a aria-label="WhatsApp" class="fixed bottom-8 right-8 z-[100] bg-[#25D366] text-white p-4 rounded-full shadow-2xl flex items-center justify-center animate-pulse-subtle hover:scale-110 transition-transform" href="#">
+<svg class="w-8 h-8" fill="currentColor" viewbox="0 0 24 24">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path>
+</svg>
+</a>
+<script>
+    // Tab switching logic
+    function switchTab(tabId, btn) {
+        document.querySelectorAll('.tab-panel').forEach(panel => panel.classList.add('hidden'));
+        document.getElementById('panel-' + tabId).classList.remove('hidden');
+        
+        document.querySelectorAll('button[onclick*="switchTab"]').forEach(button => {
+            button.classList.remove('active-tab');
+            button.classList.add('bg-white/10', 'text-white');
+        });
+        
+        btn.classList.add('active-tab');
+        btn.classList.remove('bg-white/10', 'text-white');
+    }
+
+    // FAQ Toggling
+    function toggleFaq(btn) {
+        const item = btn.parentElement;
+        const isOpen = item.classList.contains('open');
+        
+        // Close others
+        document.querySelectorAll('.faq-item').forEach(i => {
+            i.classList.remove('open');
+            i.querySelector('.faq-answer').style.maxHeight = '0px';
+            i.querySelector('span').style.transform = 'rotate(0deg)';
+        });
+
+        if (!isOpen) {
+            item.classList.add('open');
+            item.querySelector('.faq-answer').style.maxHeight = '500px';
+            btn.querySelector('span').style.transform = 'rotate(180deg)';
+        }
+    }
+
+    // Scroll Reveal Logic
+    const reveal = () => {
+        const reveals = document.querySelectorAll('.reveal');
+        reveals.forEach(el => {
+            const windowHeight = window.innerHeight;
+            const elementTop = el.getBoundingClientRect().top;
+            const elementVisible = 150;
+            if (elementTop < windowHeight - elementVisible) {
+                el.classList.add('active');
+            }
+        });
+    };
+    window.addEventListener('scroll', reveal);
+    window.addEventListener('load', reveal);
+
+    // Shader Background (from SCREEN_18)
+    (function() {
+        const canvas = document.getElementById('hero-canvas');
+        function syncSize() {
+            const w = canvas.parentElement.clientWidth;
+            const h = canvas.parentElement.clientHeight;
+            if (canvas.width !== w || canvas.height !== h) {
+                canvas.width = w;
+                canvas.height = h;
+            }
+        }
+        if (typeof ResizeObserver !== 'undefined') {
+            new ResizeObserver(syncSize).observe(canvas.parentElement);
+        }
+        syncSize();
+
+        const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+        if (!gl) return;
+        const vs = `attribute vec2 a_position; varying vec2 v_texCoord; void main() { v_texCoord = a_position * 0.5 + 0.5; gl_Position = vec4(a_position, 0.0, 1.0); }`;
+        const fs = `precision highp float;
+        varying vec2 v_texCoord;
+        uniform float u_time;
+        uniform vec2 u_resolution;
+
+        void main() {
+            vec2 uv = v_texCoord;
+            vec3 green = vec3(0.0, 0.43, 0.07); // Primary
+            vec3 lime = vec3(0.78, 0.94, 0.0);  // Secondary
+            vec3 purple = vec3(0.37, 0.34, 0.59); // Tertiary
+            
+            float noise = sin(uv.x * 2.5 + u_time * 0.4) * 0.5 + 0.5;
+            noise += cos(uv.y * 1.5 - u_time * 0.2) * 0.5 + 0.5;
+            noise *= 0.5;
+            
+            vec3 color = mix(green, purple, noise);
+            color = mix(color, lime, pow(noise, 4.0) * 0.3);
+            color *= (1.2 - uv.y * 0.4);
+            gl_FragColor = vec4(color, 1.0);
+        }`;
+        function cs(type, src) {
+            const s = gl.createShader(type);
+            gl.shaderSource(s, src);
+            gl.compileShader(s);
+            return s;
+        }
+        const prog = gl.createProgram();
+        gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+        gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+        gl.linkProgram(prog);
+        gl.useProgram(prog);
+        const buf = gl.createBuffer();
+        gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+        const pos = gl.getAttribLocation(prog, 'a_position');
+        gl.enableVertexAttribArray(pos);
+        gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+        const uTime = gl.getUniformLocation(prog, 'u_time');
+        const uRes = gl.getUniformLocation(prog, 'u_resolution');
+
+        function render(t) {
+            syncSize();
+            gl.viewport(0, 0, canvas.width, canvas.height);
+            if (uTime) gl.uniform1f(uTime, t * 0.001);
+            if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+            gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+            requestAnimationFrame(render);
+        }
+        render(0);
+    })();
+</script>
+</body></html>

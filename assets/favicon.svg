@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <circle cx="10" cy="16" r="8" fill="#006e13"/>
+  <circle cx="16" cy="16" r="8" fill="#ffffff" stroke="#eeeef0" stroke-width="0.5"/>
+  <circle cx="22" cy="16" r="8" fill="#ce2b37"/>
+  <text x="16" y="19" font-family="'Poppins', sans-serif" font-size="8" font-weight="900" fill="#1a1c1e" text-anchor="middle">IT</text>
+</svg>

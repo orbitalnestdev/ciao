@@ -1,0 +1,5 @@
+scratch/
+.gemini/
+.DS_Store
+Thumbs.db
+*.log
