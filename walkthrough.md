@@ -127,6 +127,7 @@ Se han integrado con éxito las especificaciones del cliente sobre el diseño de
     - **Sofi (Coordinadora)**: Se añadió un botón destacado que dice `"Charlar con Sofi"` que abre WhatsApp con un mensaje personalizado saludándola y pidiéndole coordinar la entrevista.
     - **Valen (Guía en Italia)**: Se añadió un botón que dice `"Consultar por el viaje"` para capturar el interés inmediato tras ver su video de Cinque Terre.
     - **FAQ (Preguntas Frecuentes)**: Se incorporó un CTA centrado al final de la sección con el texto `"¿Tenés alguna otra duda sobre el viaje?"` y un botón destacado `"Consultar por WhatsApp"` para capitalizar a las usuarias que leen las respuestas finales.
+    - **Solución de Contraste en Botón de Convivencia (`Chatear por WhatsApp`)**: Se solucionó el problema por el cual el texto del botón de la tarjeta final de Convivencia resultaba invisible debido a que se pintaba en color blanco (`#ffffff`) sobre el fondo verde lima claro (`#e6ffc7`). Se configuró para que adopte el color **Lavanda (`var(--primary)` / `#7c72ab`)** de forma imperativa, obteniendo un contraste óptimo y un diseño muy premium.
 
 
 ## Estructura Final del Entregable
