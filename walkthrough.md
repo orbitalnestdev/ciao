@@ -119,6 +119,11 @@ Se han integrado con éxito las especificaciones del cliente sobre el diseño de
     - Se inicializó un repositorio Git en la raíz del proyecto y se sincronizó con el perfil del usuario bajo el nombre de repositorio **[ciao](https://github.com/orbitalnestdev/ciao)**.
     - Se configuraron los commits iniciales y se subió todo el código de producción.
 
+24. **Optimización de Conversiones con Nuevos Botones de Acción (CTA)**:
+    - **Sofi (Coordinadora)**: Se añadió un botón destacado que dice `"Charlar con Sofi"` que abre WhatsApp con un mensaje personalizado saludándola y pidiéndole coordinar la entrevista.
+    - **Valen (Guía en Italia)**: Se añadió un botón que dice `"Consultar por el viaje"` para capturar el interés inmediato tras ver su video de Cinque Terre.
+    - **FAQ (Preguntas Frecuentes)**: Se incorporó un CTA centrado al final de la sección con el texto `"¿Tenés alguna otra duda sobre el viaje?"` y un botón destacado `"Consultar por WhatsApp"` para capitalizar a las usuarias que leen las respuestas finales.
+
 
 ## Estructura Final del Entregable
 La raíz del proyecto cuenta únicamente con los archivos necesarios para su distribución directa:
