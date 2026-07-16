@@ -110,8 +110,8 @@ Se han integrado con éxito las especificaciones del cliente sobre el diseño de
     - **Barra de Estadísticas (Stats Strip) en Violeta**: A pedido del cliente, la franja de datos estadísticos situada debajo del Hero (que detalla los días, ciudades, semanas y meses del viaje) se configuró con fondo **Violeta/Lavanda (`#7c72ab`)**, valores en color verde lima y etiquetas en blanco translúcido, logrando una estética sumamente premium e integrada.
     - **Logo del Footer Oficial en Colores**: Se removieron los filtros de escala de grises y opacidad en el logo del pie de página (footer) para que se renderice con los mismos colores reales y brillo de la marca (Lila y Verde) que el logo del header.
 
-22. **Configuración del Video del Hero con Filtro Verde de Marca (Alta Calidad Local)**:
-    - Se reestableció el uso del video de portada nativo local (`assets/hero-video.mp4`), el cual se ejecuta de manera fluida y con excelente resolución, libre de retrasos de carga o los molestos controles e interfaces del reproductor de YouTube.
+22. **Configuración del Video del Hero con Filtro Verde de Marca (Alta Calidad Local - Video Original)**:
+    - Se cargó el archivo de video nativo local proporcionado por la clienta (**`assets/video-original.mp4`**), reproduciéndose de manera fluida y en alta calidad, sin requerir la carga diferida o la interfaz del reproductor de YouTube.
     - **Eliminación de Filtros Opacos**: Se removieron por completo los filtros CSS de opacidad y brillo sobre el tag de video (`opacity: 1 !important` y `filter: none !important`), permitiendo que el navegador utilice la decodificación por hardware acelerado para mantener la máxima nitidez.
     - **Filtro Verde Premium (Overlay)**: Se rediseñó el degradado de `.hero-overlay` para fusionar un tono de contraste oscuro a la izquierda (`rgba(20, 25, 15, 0.8)` para la perfecta lectura del título blanco) con un filtro verde translúcido de la marca a la derecha (`rgba(170, 191, 74, 0.35)`). Esto cubre la totalidad del video con un tinte esmeralda muy premium que integra el video con la paleta de colores de CIAO.
 
@@ -130,6 +130,7 @@ ciao/
 │   ├── excursiones.webp
 │   ├── favicon.svg
 │   ├── hero-video.mp4
+│   ├── video-original.mp4
 │   ├── logo.png
 │   ├── logo.svg
 │   ├── roma.webp
