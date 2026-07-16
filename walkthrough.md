@@ -110,14 +110,18 @@ Se han integrado con éxito las especificaciones del cliente sobre el diseño de
     - **Barra de Estadísticas (Stats Strip) en Violeta**: A pedido del cliente, la franja de datos estadísticos situada debajo del Hero (que detalla los días, ciudades, semanas y meses del viaje) se configuró con fondo **Violeta/Lavanda (`#7c72ab`)**, valores en color verde lima y etiquetas en blanco translúcido, logrando una estética sumamente premium e integrada.
     - **Logo del Footer Oficial en Colores**: Se removieron los filtros de escala de grises y opacidad en el logo del pie de página (footer) para que se renderice con los mismos colores reales y brillo de la marca (Lila y Verde) que el logo del header.
 
-22. **Configuración del Video del Hero con Filtro Verde de Marca (Alta Calidad Local - Video Original)**:
-    - Se cargó el archivo de video nativo local proporcionado por la clienta (**`assets/video-original.mp4`**), reproduciéndose de manera fluida y en alta calidad, sin requerir la carga diferida o la interfaz del reproductor de YouTube.
-    - **Eliminación de Filtros Opacos**: Se removieron por completo los filtros CSS de opacidad y brillo sobre el tag de video (`opacity: 1 !important` y `filter: none !important`), permitiendo que el navegador utilice la decodificación por hardware acelerado para mantener la máxima nitidez.
-    - **Filtro Cinemático y Gradación de Color (Overlay)**: Se rediseñó el degradado de `.hero-overlay` para aplicar una gradación tricolor de marca sumamente premium. Se fusiona un tono de contraste negro-bosque a la izquierda (`rgba(20, 25, 15, 0.85)` para perfecta lectura del título blanco), transitando por un lila de marca suave (`rgba(124, 114, 171, 0.25)`), hasta un verde de marca translúcido a la derecha (`rgba(170, 191, 74, 0.35)`). Para elevar la estética al nivel de alta gama, se incorporó un filtro de fondo en tiempo real (`backdrop-filter: saturate(1.3) contrast(1.15)`) que incrementa la saturación y el contraste del video, logrando un aspecto cinematográfico, colorido y nítido.
+22. **Integración del Video del Hero por Iframe de YouTube con Filtro Cinemático**:
+    - Se cargó el embed directo de YouTube proporcionado por el usuario (`00GVjWG5hd0`) ocupando todo el ancho de la pantalla, manteniendo el formato original de 16:9 y reproduciéndose en máxima calidad sin barras negras.
+    - **Filtro Cinemático y Gradación de Color (Overlay)**: Se aplicó un degradado tricolor de marca sobre el iframe (`linear-gradient` de negro-bosque a lila y finalmente verde brand con 35% de opacidad). Se incorporó un filtro de fondo en tiempo real (`backdrop-filter: saturate(1.3) contrast(1.15)`) que incrementa la saturación y el contraste del video, logrando un aspecto cinematográfico y nítido.
+    - **Bloqueo de Interacción**: La capa superior `.hero-overlay` se configuró con `pointer-events: auto !important` y `z-index: 3 !important` para bloquear clics directos sobre el iframe e impedir que se activen las barras de reproducción o controles de YouTube al tocar el fondo.
 
 23. **Repositorio GitHub Creado e Integrado**:
     - Se inicializó un repositorio Git en la raíz del proyecto y se sincronizó con el perfil del usuario bajo el nombre de repositorio **[ciao](https://github.com/orbitalnestdev/ciao)**.
     - Se configuraron los commits iniciales y se subió todo el código de producción.
+
+25. **Ajustes de Alineación en el Itinerario y Escala del Título**:
+    - **Alineación de Imágenes en el Itinerario**: Se solucionó el problema por el cual las imágenes de Bologna y Roma se veían desproporcionadas y más cortas en altura en comparación con el bloque de tarjetas diarias del itinerario. Se modificó la regla `.itinerary-panel` a `align-items: stretch` y `.itinerary-image-wrapper` a `height: 100%`, logrando que la imagen se estire y acople dinámicamente de forma automática, alineándose de forma simétrica a la perfección con la altura total de la lista de tarjetas en todas las resoluciones.
+    - **Reducción del Título del Hero**: Se achicó ligeramente el tamaño del título principal (`.hero-title`) a **`2.5rem`** en móviles (antes `3rem`) y a **`3.75rem`** en desktop (antes `4.5rem`), logrando una jerarquía visual mucho más premium y equilibrada sin romper en demasiadas líneas.
 
 24. **Optimización de Conversiones con Nuevos Botones de Acción (CTA)**:
     - **Sofi (Coordinadora)**: Se añadió un botón destacado que dice `"Charlar con Sofi"` que abre WhatsApp con un mensaje personalizado saludándola y pidiéndole coordinar la entrevista.

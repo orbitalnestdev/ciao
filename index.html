@@ -36,7 +36,13 @@
       background-color: #000;
     }
     .hero-title {
+      font-size: 2.5rem !important; /* Smaller main title */
       text-shadow: 0 4px 20px rgba(0,0,0,0.5), 0 2px 5px rgba(0,0,0,0.3) !important;
+    }
+    @media (min-width: 768px) {
+      .hero-title {
+        font-size: 3.75rem !important; /* Smaller main title on desktop */
+      }
     }
     .hero-desc {
       text-shadow: 0 2px 10px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.3) !important;
@@ -617,10 +623,14 @@
     .itinerary-panel {
       display: grid !important;
       gap: 4rem !important; /* More breathing room */
-      align-items: start !important;
+      align-items: stretch !important; /* Stretch columns to match height dynamically */
     }
     .itinerary-panel h3 span.italic {
       color: var(--secondary) !important;
+    }
+    .itinerary-image-wrapper {
+      height: 100% !important; /* Stretch image wrapper to match height */
+      min-height: 400px !important; /* Mobile fallback height */
     }
     @media (min-width: 768px) {
       .itinerary-panel {
@@ -639,7 +649,7 @@
     }
 
     .hero-overlay {
-      pointer-events: none !important; /* Allow clicks to pass through for native local video */
+      pointer-events: auto !important; /* Prevents clicks from showing YouTube background controls */
       z-index: 3 !important;
       background: linear-gradient(to right, rgba(20, 25, 15, 0.85) 0%, rgba(124, 114, 171, 0.25) 45%, rgba(170, 191, 74, 0.35) 100%) !important; /* Tricolor cinematic brand filter overlay */
       backdrop-filter: saturate(1.3) contrast(1.15) !important; /* Cinematic color grading filter */
@@ -917,9 +927,7 @@
     <section class="hero-section">
       <div class="hero-bg">
         <div class="hero-video-container">
-          <video autoplay loop muted playsinline id="hero-video" preload="auto">
-            <source src="assets/video-original.mp4" type="video/mp4" />
-          </video>
+          <iframe src="https://www.youtube.com/embed/00GVjWG5hd0?autoplay=1&mute=1&controls=0&loop=1&playlist=00GVjWG5hd0&playsinline=1&disablekb=1" title="Video" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen> </iframe>
         </div>
       </div>
       <div class="hero-overlay"></div>
