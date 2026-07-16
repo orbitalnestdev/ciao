@@ -639,7 +639,7 @@
     }
 
     .hero-overlay {
-      pointer-events: auto !important; /* Prevents clicks from showing YouTube background controls */
+      pointer-events: none !important; /* Allow clicks to pass through for native local video */
       z-index: 3 !important;
       background: linear-gradient(to right, rgba(20, 25, 15, 0.8) 0%, rgba(170, 191, 74, 0.35) 100%) !important; /* Green brand filter overlay */
     }
@@ -916,7 +916,9 @@
     <section class="hero-section">
       <div class="hero-bg">
         <div class="hero-video-container">
-          <div id="hero-yt-player"></div>
+          <video autoplay loop muted playsinline id="hero-video" preload="auto">
+            <source src="assets/video-original.mp4" type="video/mp4" />
+          </video>
         </div>
       </div>
       <div class="hero-overlay"></div>
@@ -2009,43 +2011,7 @@
 
   <!-- Scripts -->
   <script src="script.js?v=2.1"></script>
-  <script src="https://www.youtube.com/iframe_api"></script>
   <script>
-    var ytPlayer;
-    function onYouTubeIframeAPIReady() {
-      ytPlayer = new YT.Player('hero-yt-player', {
-        videoId: '00GVjWG5hd0',
-        playerVars: {
-          'autoplay': 1,
-          'controls': 0,
-          'showinfo': 0,
-          'rel': 0,
-          'loop': 1,
-          'playlist': '00GVjWG5hd0',
-          'mute': 1,
-          'playsinline': 1,
-          'disablekb': 1,
-          'fs': 0,
-          'modestbranding': 1,
-          'iv_load_policy': 3,
-          'autohide': 1
-        },
-        events: {
-          'onReady': function(e) {
-            e.target.mute();
-            e.target.playVideo();
-          },
-          'onStateChange': function(e) {
-            if (e.data === YT.PlayerState.PLAYING) {
-              e.target.mute();
-            }
-            if (e.data === YT.PlayerState.ENDED) {
-              e.target.playVideo();
-            }
-          }
-        }
-      });
-    }
 
     function switchTipTab(tabId, btn) {
       document.querySelectorAll('.tips-content-panel').forEach(function(panel) {
