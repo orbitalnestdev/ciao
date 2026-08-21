@@ -23,7 +23,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
   
   <!-- Stylesheet -->
-  <link href="styles.css?v=2.1" rel="stylesheet" />
+  <link href="styles.css?v=4.0" rel="stylesheet" />
   <style>
     .hero-video-container {
       position: absolute;
@@ -1273,17 +1273,11 @@
     <section class="founder-section reveal" style="background-color: var(--background); border-top: 1px solid rgba(0,0,0,0.03);">
       <div class="founder-grid container">
         <div class="founder-video-wrapper">
-          <!-- ESPACIO PARA EL VIDEO DE VALEN -->
-          <div class="valen-video-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #e6ffc7 0%, #7c72ab 100%); display: flex; align-items: center; justify-content: center; cursor: pointer;">
-            <div style="position: absolute; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.15); z-index: 1;"></div>
-            <div class="play-btn-wrapper" style="position: relative; z-index: 2; width: 4.5rem; height: 4.5rem; background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; transition: all 0.3s ease;">
-              <span class="material-symbols-outlined" style="font-size: 32px; font-variation-settings: 'FILL' 1;">play_arrow</span>
-            </div>
-            <div style="position: absolute; bottom: 1.5rem; left: 1.5rem; z-index: 2; color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.2); text-align: left;">
-              <h4 style="margin: 0; font-size: 16px; font-weight: 700; color: white;">Mensaje de Valen</h4>
-              <p style="margin: 0; font-size: 11px; opacity: 0.85; color: white;">[Espacio reservado para video de Cinque Terre]</p>
-            </div>
-          </div>
+          <iframe src="https://www.youtube.com/embed/9WkOUGNI-QI?rel=0&playsinline=1" 
+                  title="Conocé a Valen, tu guía en Cinque Terre" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen
+                  loading="lazy"></iframe>
         </div>
         <div class="founder-info">
           <span class="tag">Anfitriona en Italia</span>
@@ -1407,75 +1401,255 @@
     </section>
 
     <!-- Gallery Section -->
-    <section class="gallery-section reveal">
+    <section class="gallery-section reveal" id="galeria">
       <div class="container">
         <div class="gallery-header">
           <span class="tag">Capturas del viaje</span>
           <h2>Así se vive la <span class="italic">experiencia CIAO.</span></h2>
         </div>
-        <div class="gallery-grid">
-          <img alt="Bologna Street - Históricos soportales rojos de Bologna" class="gallery-img" src="assets/bologna.webp" width="600" height="400" loading="lazy" />
-          <img alt="Firenze View - El icónico Ponte Vecchio en Florencia" class="gallery-img" src="assets/excursiones.webp" width="600" height="400" loading="lazy" />
-          <img alt="Rome Colosseum - Detalle del Coliseo Romano iluminado por el sol" class="gallery-img" src="assets/roma.webp" width="600" height="400" loading="lazy" />
-          <img alt="Italian Food - Exquisito plato de pasta tradicional italiana servido en un restaurante" class="gallery-img" src="assets/comida.webp" width="600" height="400" loading="lazy" />
+      </div>
+      
+      <div class="infinite-carousel-container">
+        <button class="carousel-arrow carousel-prev" onclick="scrollCarousel('gallery-track', -340)" aria-label="Anterior">
+          <span class="material-symbols-outlined">chevron_left</span>
+        </button>
+
+        <div class="infinite-carousel-wrapper">
+          <div class="infinite-carousel-track gallery-track" id="gallery-track">
+            <!-- Set 1 -->
+            <img alt="Captura del viaje CIAO a Italia 1" class="gallery-img" src="assets/galeria/galeria1.jpg" width="600" height="400" loading="lazy" onclick="openLightbox(0)" />
+            <img alt="Captura del viaje CIAO a Italia 2" class="gallery-img" src="assets/galeria/galeria2.jpg" width="600" height="400" loading="lazy" onclick="openLightbox(1)" />
+            <img alt="Captura del viaje CIAO a Italia 3" class="gallery-img" src="assets/galeria/galeria3.jpg" width="600" height="400" loading="lazy" onclick="openLightbox(2)" />
+            <img alt="Captura del viaje CIAO a Italia 4" class="gallery-img" src="assets/galeria/galeria4.jpg" width="600" height="400" loading="lazy" onclick="openLightbox(3)" />
+            <img alt="Captura del viaje CIAO a Italia 5" class="gallery-img" src="assets/galeria/galeria5.jpg" width="600" height="400" loading="lazy" onclick="openLightbox(4)" />
+            <img alt="Captura del viaje CIAO a Italia 6" class="gallery-img" src="assets/galeria/galeria6.jpg" width="600" height="400" loading="lazy" onclick="openLightbox(5)" />
+            <img alt="Captura del viaje CIAO a Italia 7" class="gallery-img" src="assets/galeria/galeria7.jpg" width="600" height="400" loading="lazy" onclick="openLightbox(6)" />
+            <img alt="Captura del viaje CIAO a Italia 8" class="gallery-img" src="assets/galeria/galeria8.jpg" width="600" height="400" loading="lazy" onclick="openLightbox(7)" />
+            <img alt="Captura del viaje CIAO a Italia 9" class="gallery-img" src="assets/galeria/galeria9.jpg" width="600" height="400" loading="lazy" onclick="openLightbox(8)" />
+            <img alt="Captura del viaje CIAO a Italia 10" class="gallery-img" src="assets/galeria/galeria10.jpg" width="600" height="400" loading="lazy" onclick="openLightbox(9)" />
+            <img alt="Captura del viaje CIAO a Italia 11" class="gallery-img" src="assets/galeria/galeria11.jpg" width="600" height="400" loading="lazy" onclick="openLightbox(10)" />
+            <img alt="Captura del viaje CIAO a Italia 12" class="gallery-img" src="assets/galeria/galeria12.jpg" width="600" height="400" loading="lazy" onclick="openLightbox(11)" />
+            <img alt="Captura del viaje CIAO a Italia 13" class="gallery-img" src="assets/galeria/galeria13.jpg" width="600" height="400" loading="lazy" onclick="openLightbox(12)" />
+            <img alt="Captura del viaje CIAO a Italia 14" class="gallery-img" src="assets/galeria/galeria14.jpg" width="600" height="400" loading="lazy" onclick="openLightbox(13)" />
+            <img alt="Captura del viaje CIAO a Italia 15" class="gallery-img" src="assets/galeria/galeria15.jpg" width="600" height="400" loading="lazy" onclick="openLightbox(14)" />
+            <img alt="Captura del viaje CIAO a Italia 16" class="gallery-img" src="assets/galeria/galeria16.jpg" width="600" height="400" loading="lazy" onclick="openLightbox(15)" />
+            <img alt="Captura del viaje CIAO a Italia 17" class="gallery-img" src="assets/galeria/galeria17.jpg" width="600" height="400" loading="lazy" onclick="openLightbox(16)" />
+            <img alt="Captura del viaje CIAO a Italia 18" class="gallery-img" src="assets/galeria/galeria18.jpg" width="600" height="400" loading="lazy" onclick="openLightbox(17)" />
+
+            <!-- Duplicated Set for Seamless Infinite Loop -->
+            <img alt="Captura del viaje CIAO a Italia 1" class="gallery-img" src="assets/galeria/galeria1.jpg" width="600" height="400" loading="lazy" onclick="openLightbox(0)" />
+            <img alt="Captura del viaje CIAO a Italia 2" class="gallery-img" src="assets/galeria/galeria2.jpg" width="600" height="400" loading="lazy" onclick="openLightbox(1)" />
+            <img alt="Captura del viaje CIAO a Italia 3" class="gallery-img" src="assets/galeria/galeria3.jpg" width="600" height="400" loading="lazy" onclick="openLightbox(2)" />
+            <img alt="Captura del viaje CIAO a Italia 4" class="gallery-img" src="assets/galeria/galeria4.jpg" width="600" height="400" loading="lazy" onclick="openLightbox(3)" />
+            <img alt="Captura del viaje CIAO a Italia 5" class="gallery-img" src="assets/galeria/galeria5.jpg" width="600" height="400" loading="lazy" onclick="openLightbox(4)" />
+            <img alt="Captura del viaje CIAO a Italia 6" class="gallery-img" src="assets/galeria/galeria6.jpg" width="600" height="400" loading="lazy" onclick="openLightbox(5)" />
+            <img alt="Captura del viaje CIAO a Italia 7" class="gallery-img" src="assets/galeria/galeria7.jpg" width="600" height="400" loading="lazy" onclick="openLightbox(6)" />
+            <img alt="Captura del viaje CIAO a Italia 8" class="gallery-img" src="assets/galeria/galeria8.jpg" width="600" height="400" loading="lazy" onclick="openLightbox(7)" />
+            <img alt="Captura del viaje CIAO a Italia 9" class="gallery-img" src="assets/galeria/galeria9.jpg" width="600" height="400" loading="lazy" onclick="openLightbox(8)" />
+            <img alt="Captura del viaje CIAO a Italia 10" class="gallery-img" src="assets/galeria/galeria10.jpg" width="600" height="400" loading="lazy" onclick="openLightbox(9)" />
+            <img alt="Captura del viaje CIAO a Italia 11" class="gallery-img" src="assets/galeria/galeria11.jpg" width="600" height="400" loading="lazy" onclick="openLightbox(10)" />
+            <img alt="Captura del viaje CIAO a Italia 12" class="gallery-img" src="assets/galeria/galeria12.jpg" width="600" height="400" loading="lazy" onclick="openLightbox(11)" />
+            <img alt="Captura del viaje CIAO a Italia 13" class="gallery-img" src="assets/galeria/galeria13.jpg" width="600" height="400" loading="lazy" onclick="openLightbox(12)" />
+            <img alt="Captura del viaje CIAO a Italia 14" class="gallery-img" src="assets/galeria/galeria14.jpg" width="600" height="400" loading="lazy" onclick="openLightbox(13)" />
+            <img alt="Captura del viaje CIAO a Italia 15" class="gallery-img" src="assets/galeria/galeria15.jpg" width="600" height="400" loading="lazy" onclick="openLightbox(14)" />
+            <img alt="Captura del viaje CIAO a Italia 16" class="gallery-img" src="assets/galeria/galeria16.jpg" width="600" height="400" loading="lazy" onclick="openLightbox(15)" />
+            <img alt="Captura del viaje CIAO a Italia 17" class="gallery-img" src="assets/galeria/galeria17.jpg" width="600" height="400" loading="lazy" onclick="openLightbox(16)" />
+            <img alt="Captura del viaje CIAO a Italia 18" class="gallery-img" src="assets/galeria/galeria18.jpg" width="600" height="400" loading="lazy" onclick="openLightbox(17)" />
+          </div>
         </div>
+
+        <button class="carousel-arrow carousel-next" onclick="scrollCarousel('gallery-track', 340)" aria-label="Siguiente">
+          <span class="material-symbols-outlined">chevron_right</span>
+        </button>
       </div>
     </section>
+
+    <!-- Lightbox Modal -->
+    <div id="gallery-lightbox" class="lightbox-modal" onclick="closeLightbox(event)">
+      <button class="lightbox-close" aria-label="Cerrar" onclick="closeLightboxForce()">&times;</button>
+      <button class="lightbox-prev" aria-label="Anterior" onclick="changeLightboxImg(-1, event)">&#10094;</button>
+      <div class="lightbox-content">
+        <img id="lightbox-img" class="lightbox-img" src="" alt="Vista ampliada" />
+      </div>
+      <button class="lightbox-next" aria-label="Siguiente" onclick="changeLightboxImg(1, event)">&#10095;</button>
+    </div>
 
     <!-- Testimonials Section -->
     <section class="testimonials-section reveal" id="testimonios">
       <div class="container">
         <div class="testimonials-header">
-          <span class="tag">Lo que cuentan los que ya viajaron</span>
+          <span class="tag">Experiencias y Testimonios en Video</span>
           <h2>No son reseñas. Son <span class="italic">experiencias vividas.</span></h2>
         </div>
-        <div class="testimonials-grid">
-          <!-- Testimonio 1 -->
-          <div class="testimonial-card">
-            <div class="stars-container">
-              <span class="material-symbols-outlined fill-1">star</span>
-              <span class="material-symbols-outlined fill-1">star</span>
-              <span class="material-symbols-outlined fill-1">star</span>
-              <span class="material-symbols-outlined fill-1">star</span>
-              <span class="material-symbols-outlined fill-1">star</span>
+      </div>
+
+      <div class="infinite-carousel-container">
+        <button class="carousel-arrow carousel-prev" onclick="scrollCarousel('shorts-track', -300)" aria-label="Anterior">
+          <span class="material-symbols-outlined">chevron_left</span>
+        </button>
+
+        <div class="infinite-carousel-wrapper">
+          <div class="infinite-carousel-track shorts-track" id="shorts-track">
+            <!-- Short 1 -->
+            <div class="short-card">
+              <div class="short-iframe-wrapper">
+                <iframe src="https://www.youtube.com/embed/z46ete1jMnw?rel=0&playsinline=1" title="Susana Zagorodny nos cuenta su experiencia viajando con CIAO a Bologna" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+              </div>
+              <div class="short-card-info">
+                <h4 class="short-card-title">Susana Zagorodny</h4>
+                <p class="short-card-channel">Experiencia en Bologna con CIAO</p>
+              </div>
             </div>
-            <p class="testimonial-text">"Viajar con la CEO hizo toda la diferencia. Nos acompañó en cada recorrido, organizó todo al detalle y siempre estuvo disponible. Me sentí súper contenida y pude disfrutar Italia aprendiendo muchísimo."</p>
-            <div>
-              <h4 class="testimonial-author">Sofía Pereyra</h4>
-              <p class="testimonial-info">Buenos Aires · Viajó en 2024</p>
+            <!-- Short 2 -->
+            <div class="short-card">
+              <div class="short-iframe-wrapper">
+                <iframe src="https://www.youtube.com/embed/gWr0ZGtC7RE?rel=0&playsinline=1" title="Graciela Cardozo nos cuenta su experiencia viajando con CIAO a Bologna" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+              </div>
+              <div class="short-card-info">
+                <h4 class="short-card-title">Graciela Cardozo</h4>
+                <p class="short-card-channel">Experiencia en Bologna con CIAO</p>
+              </div>
             </div>
-          </div>
-          <!-- Testimonio 2 -->
-          <div class="testimonial-card">
-            <div class="stars-container">
-              <span class="material-symbols-outlined fill-1">star</span>
-              <span class="material-symbols-outlined fill-1">star</span>
-              <span class="material-symbols-outlined fill-1">star</span>
-              <span class="material-symbols-outlined fill-1">star</span>
-              <span class="material-symbols-outlined fill-1">star</span>
+            <!-- Short 3 -->
+            <div class="short-card">
+              <div class="short-iframe-wrapper">
+                <iframe src="https://www.youtube.com/embed/ZEEvinVCF-c?rel=0&playsinline=1" title="Sandra Correa nos cuenta su experiencia viajando con CIAO a Bologna" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+              </div>
+              <div class="short-card-info">
+                <h4 class="short-card-title">Sandra Correa</h4>
+                <p class="short-card-channel">Experiencia en Bologna con CIAO</p>
+              </div>
             </div>
-            <p class="testimonial-text">"Las clases en la Dante fueron muy prácticas y me ayudaron a desenvolverme mejor en cada ciudad. Conocí personas increíbles que hicieron la experiencia aún más enriquecedora."</p>
-            <div>
-              <h4 class="testimonial-author">Martín Acosta</h4>
-              <p class="testimonial-info">Rosario · Viajó en 2024</p>
+            <!-- Short 4 -->
+            <div class="short-card">
+              <div class="short-iframe-wrapper">
+                <iframe src="https://www.youtube.com/embed/89EJBzaBufY?rel=0&playsinline=1" title="Silvina Russo nos cuenta su experiencia viajando con CIAO a Bologna" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+              </div>
+              <div class="short-card-info">
+                <h4 class="short-card-title">Silvina Russo</h4>
+                <p class="short-card-channel">Experiencia en Bologna con CIAO</p>
+              </div>
             </div>
-          </div>
-          <!-- Testimonio 3 -->
-          <div class="testimonial-card">
-            <div class="stars-container">
-              <span class="material-symbols-outlined fill-1">star</span>
-              <span class="material-symbols-outlined fill-1">star</span>
-              <span class="material-symbols-outlined fill-1">star</span>
-              <span class="material-symbols-outlined fill-1">star</span>
-              <span class="material-symbols-outlined fill-1">star</span>
+            <!-- Short 5 -->
+            <div class="short-card">
+              <div class="short-iframe-wrapper">
+                <iframe src="https://www.youtube.com/embed/9WkOUGNI-QI?rel=0&playsinline=1" title="Vale nos cuenta su experiencia en Cinque Terre con CIAO" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+              </div>
+              <div class="short-card-info">
+                <h4 class="short-card-title">Vale (Valeria)</h4>
+                <p class="short-card-channel">Experiencia en Cinque Terre con CIAO</p>
+              </div>
             </div>
-            <p class="testimonial-text">"Una experiencia soñada. Me encantó cómo se combinaron las visitas culturales con las clases. Tener una guía que conocía perfectamente cada ciudad hizo que todo fluyera con naturalidad."</p>
-            <div>
-              <h4 class="testimonial-author">Valentina Romero</h4>
-              <p class="testimonial-info">Córdoba · Viajó en 2023</p>
+            <!-- Short 6 -->
+            <div class="short-card">
+              <div class="short-iframe-wrapper">
+                <iframe src="https://www.youtube.com/embed/uBAierL2OsA?rel=0&playsinline=1" title="Presentación Sofía Damiani - Fundadora de CIAO Idiomas" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+              </div>
+              <div class="short-card-info">
+                <h4 class="short-card-title">Sofía Damiani</h4>
+                <p class="short-card-channel">Fundadora de CIAO Idiomas</p>
+              </div>
+            </div>
+            <!-- Short 7 -->
+            <div class="short-card">
+              <div class="short-iframe-wrapper">
+                <iframe src="https://www.youtube.com/embed/Ur4a0TXZEiA?rel=0&playsinline=1" title="Invitación al próximo viaje de estudio" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+              </div>
+              <div class="short-card-info">
+                <h4 class="short-card-title">Próximo Viaje de Estudio</h4>
+                <p class="short-card-channel">Inmersión en Italia</p>
+              </div>
+            </div>
+            <!-- Short 8 -->
+            <div class="short-card">
+              <div class="short-iframe-wrapper">
+                <iframe src="https://www.youtube.com/embed/5JNsk8rGxs8?rel=0&playsinline=1" title="On Demand vs Intensivo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+              </div>
+              <div class="short-card-info">
+                <h4 class="short-card-title">Cursos de Idioma</h4>
+                <p class="short-card-channel">On Demand vs Intensivo</p>
+              </div>
+            </div>
+
+            <!-- Duplicated Set (8 Shorts) for Seamless Loop -->
+            <div class="short-card">
+              <div class="short-iframe-wrapper">
+                <iframe src="https://www.youtube.com/embed/z46ete1jMnw?rel=0&playsinline=1" title="Susana Zagorodny nos cuenta su experiencia viajando con CIAO a Bologna" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+              </div>
+              <div class="short-card-info">
+                <h4 class="short-card-title">Susana Zagorodny</h4>
+                <p class="short-card-channel">Experiencia en Bologna con CIAO</p>
+              </div>
+            </div>
+            <div class="short-card">
+              <div class="short-iframe-wrapper">
+                <iframe src="https://www.youtube.com/embed/gWr0ZGtC7RE?rel=0&playsinline=1" title="Graciela Cardozo nos cuenta su experiencia viajando con CIAO a Bologna" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+              </div>
+              <div class="short-card-info">
+                <h4 class="short-card-title">Graciela Cardozo</h4>
+                <p class="short-card-channel">Experiencia en Bologna con CIAO</p>
+              </div>
+            </div>
+            <div class="short-card">
+              <div class="short-iframe-wrapper">
+                <iframe src="https://www.youtube.com/embed/ZEEvinVCF-c?rel=0&playsinline=1" title="Sandra Correa nos cuenta su experiencia viajando con CIAO a Bologna" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+              </div>
+              <div class="short-card-info">
+                <h4 class="short-card-title">Sandra Correa</h4>
+                <p class="short-card-channel">Experiencia en Bologna con CIAO</p>
+              </div>
+            </div>
+            <div class="short-card">
+              <div class="short-iframe-wrapper">
+                <iframe src="https://www.youtube.com/embed/89EJBzaBufY?rel=0&playsinline=1" title="Silvina Russo nos cuenta su experiencia viajando con CIAO a Bologna" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+              </div>
+              <div class="short-card-info">
+                <h4 class="short-card-title">Silvina Russo</h4>
+                <p class="short-card-channel">Experiencia en Bologna con CIAO</p>
+              </div>
+            </div>
+            <div class="short-card">
+              <div class="short-iframe-wrapper">
+                <iframe src="https://www.youtube.com/embed/9WkOUGNI-QI?rel=0&playsinline=1" title="Vale nos cuenta su experiencia en Cinque Terre con CIAO" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+              </div>
+              <div class="short-card-info">
+                <h4 class="short-card-title">Vale (Valeria)</h4>
+                <p class="short-card-channel">Experiencia en Cinque Terre con CIAO</p>
+              </div>
+            </div>
+            <div class="short-card">
+              <div class="short-iframe-wrapper">
+                <iframe src="https://www.youtube.com/embed/uBAierL2OsA?rel=0&playsinline=1" title="Presentación Sofía Damiani - Fundadora de CIAO Idiomas" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+              </div>
+              <div class="short-card-info">
+                <h4 class="short-card-title">Sofía Damiani</h4>
+                <p class="short-card-channel">Fundadora de CIAO Idiomas</p>
+              </div>
+            </div>
+            <div class="short-card">
+              <div class="short-iframe-wrapper">
+                <iframe src="https://www.youtube.com/embed/Ur4a0TXZEiA?rel=0&playsinline=1" title="Invitación al próximo viaje de estudio" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+              </div>
+              <div class="short-card-info">
+                <h4 class="short-card-title">Próximo Viaje de Estudio</h4>
+                <p class="short-card-channel">Inmersión en Italia</p>
+              </div>
+            </div>
+            <div class="short-card">
+              <div class="short-iframe-wrapper">
+                <iframe src="https://www.youtube.com/embed/5JNsk8rGxs8?rel=0&playsinline=1" title="On Demand vs Intensivo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+              </div>
+              <div class="short-card-info">
+                <h4 class="short-card-title">Cursos de Idioma</h4>
+                <p class="short-card-channel">On Demand vs Intensivo</p>
+              </div>
             </div>
           </div>
         </div>
+
+        <button class="carousel-arrow carousel-next" onclick="scrollCarousel('shorts-track', 300)" aria-label="Siguiente">
+          <span class="material-symbols-outlined">chevron_right</span>
+        </button>
       </div>
     </section>
 
